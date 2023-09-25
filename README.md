@@ -70,29 +70,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-import React, {useState} from 'react';
-import app from "../firebaseConfig";
-import { getDatabase, ref, set, push } from "firebase/database";
+import React, { useState } from 'react';
+import app from '../firebaseConfig'; // Import the Firebase app you initialized
+import { getDatabase, ref, get } from "firebase/database";
 
-function Write() {
+function Read() {
 
-  let [inputValue1, setInputValue1] = useState("");
-  let [inputValue2, setInputValue2] = useState("");
+  const [fruitsArray, setFruitsArray] = useState([]); // Local state to hold fetched data
 
-  const saveData = async () => {
-    const db = getDatabase(app)
-  }
+
+  const fetchData = async () => {
+    const db = getDatabase(app);
+    const dbRef = ref(db, 'nature/fruits');
+    const snapshot = await get(dbRef);
+    if (snapshot.exists()) {
+        setFruitsArray(Object.values(snapshot.val()));
+    } else {
+        alert("No data found");
+    }
+  };
 
   return (
     <div>
-      <input type='text' value={inputValue1} 
-      onChange={(e) => setInputValue1(e.target.value) }/> 
-      <input type='text' value={inputValue2} 
-      onChange={(e) => setInputValue2(e.target.value) }/> <br />
-      <button onClick={saveData}>SAVE DATA</button>
+      <button onClick={fetchData}>
+        Fetch Data
+      </button>
+      <ul>
+        {fruitsArray.map((item, index) => (
+          <li key={index}>{item.fruitName}: {item.fruitDefinition}</li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default Write
+export default Read;
 

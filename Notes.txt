@@ -1,0 +1,46 @@
+
+BEFORE SNAPSHOT.VAL() -- JSON LIKE FORMAT
+{
+  "fruit1Id": {
+    fruitName: "apple",
+    fruitDefinition: "red fruit"
+  },
+  "fruit2Id": {
+    fruitName: "banana",
+    fruitDefinition: "yellow  fruit"
+  }
+}
+
+
+AFTER SNAPSHOT.VAL() -- JAVASCRIPT OBJECT
+{
+    "fruit1Id": {
+      fruitName: "apple",
+      fruitDefinition: "red fruit"
+    },
+    "fruit2Id": {
+      fruitName: "banana",
+      fruitDefinition: "yellow  fruit"
+    }
+}
+
+AFTER OBJECT.VALUES(SNAPSHOT.VAL()) -- AN ARRAY OF JAVASCRIPT OBJECTS
+[
+    {
+      fruitName: "apple",
+      fruitDefinition: "red fruit"
+    },
+    {
+      fruitName: "banana",
+      fruitDefinition: "yellow  fruit"
+    }
+]
+
+
+
+
+
+
+
+
+
