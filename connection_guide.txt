@@ -1,0 +1,74 @@
+
+1. create github and repo and clone it
+2. npx create-react-app .
+3. npm install react-router-dom
+4. npm install dotenv firebase
+5. make cleanup
+
+NOTE: If you face any dependecy error, use "--legacy-peer-deps" or "--force". Example:
+npm install dotenv --legacy-peer-deps
+
+NOTE: Add this script tag to your index.html to avoid red react.js icon in your browser
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+7. Create project and database on Firebase Console
+
+firebase console - "add project"
+On the left bar of the new project -- "build" - "firestore database"
+Start in Production mode
+On database panel, click on "Rules" and change setting to "allow read, write;"
+
+
+8. Create an app
+-On project panel, there is a small button at top: "Add app" -- "web"
+-Then click on the newly created app, click on settings icon, scroll down and you'll see settings
+-Copy these settings in .env file as shown below
+
+6. Make sure .gitignore contains ".env"
+
+6. create a dotenv file at the root of your project:
+REACT_APP_FIREBASE_API_KEY="AIzaSyDJySspLdeUlE-PwDsHKs5RuCEerTJv8vzyg"
+REACT_APP_FIREBASE_AUTH_DOMAIN="englishstories-99ba5c.firebaseapp.com"
+REACT_APP_FIREBASE_DATABASE_URL="asdfasdfasdfasdfasdfasdf"
+REACT_APP_FIREBASE_PROJECT_ID="englishstories-99ba5c"
+REACT_APP_FIREBASE_STORAGE_BUCKET="englishstories-99ba5c.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID="559496219083"
+REACT_APP_FIREBASE_APP_ID="1:559496219083:web:504bcbd996dyr51da4d360e4e"
+REACT_APP_FIREBASE_MEASUREMENT_ID="G-BM0KE640WR5"
+
+7.**************************
+****************************
+
+
+Create a firebaseConfig.js at any place you want:
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+export default app;
+
+
+8. Create your component:
+
+
