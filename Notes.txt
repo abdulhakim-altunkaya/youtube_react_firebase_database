@@ -24,7 +24,7 @@ AFTER SNAPSHOT.VAL() -- JAVASCRIPT OBJECT
     }
 }
 
-AFTER OBJECT.VALUES(SNAPSHOT.VAL()) -- AN ARRAY OF JAVASCRIPT OBJECTS
+OPTION 1: AFTER OBJECT.VALUES(SNAPSHOT.VAL()) -- AN ARRAY OF JAVASCRIPT OBJECTS
 [
     {
       fruitName: "apple",
@@ -32,8 +32,16 @@ AFTER OBJECT.VALUES(SNAPSHOT.VAL()) -- AN ARRAY OF JAVASCRIPT OBJECTS
     },
     {
       fruitName: "banana",
-      fruitDefinition: "yellow  fruit"
+      fruitDefinition: "yellow  fruit",
+      fruitId: "fefwef2f"
     }
+]
+
+
+OPTION 2: AFTER CALLING OBJECT.KEYS(SNAPSHOT.VAL())
+[
+  "-NfCnDYK3ZUCQgQ90A1b",
+  "-NfCnDYK3ZUCQgQ90C3c"
 ]
 
 
