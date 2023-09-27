@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import app from "../firebaseConfig";
 import { getDatabase, ref, get } from "firebase/database";
+import { useNavigate } from 'react-router-dom';
 
 function UpdateRead() {
+
+  const navigate = useNavigate();
 
   let [fruitArray, setFruitArray] = useState([]);
 
@@ -32,6 +35,7 @@ function UpdateRead() {
         {fruitArray.map( (item, index) => (
           <li key={index}> 
             {item.fruitName}: {item.fruitDefinition} : {item.fruitId}
+            <button onClick={ () => navigate(`/updatewrite/${item.fruitId}`) }>Update</button>
           </li>
         ) )}
       </ul>
