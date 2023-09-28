@@ -2,7 +2,7 @@
 BEFORE SNAPSHOT.VAL() -- JSON LIKE FORMAT
 {
   "fruit1Id": {
-    fruitName: "apple",
+    fruitName: "apple", 
     fruitDefinition: "red fruit"
   },
   "fruit2Id": {
@@ -42,7 +42,7 @@ OPTION 2: AFTER CALLING OBJECT.KEYS(SNAPSHOT.VAL())
 [
   "-NfCnDYK3ZUCQgQ90A1b",
   "-NfCnDYK3ZUCQgQ90C3c"
-]
+] 
 
 
 

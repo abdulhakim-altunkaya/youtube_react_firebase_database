@@ -30,15 +30,17 @@ function UpdateRead() {
 
   return (
     <div>
+      <h1>UPDATE READ</h1>
       <button onClick={fetchData}> Display Data </button>
       <ul>
         {fruitArray.map( (item, index) => (
           <li key={index}> 
             {item.fruitName}: {item.fruitDefinition} : {item.fruitId}
-            <button onClick={ () => navigate(`/updatewrite/${item.fruitId}`) }>Update</button>
           </li>
         ) )}
       </ul>
+      <button className='button1' onClick={ () => navigate("/")}>GO HOMEPAGE</button> <br />
+      <button className='button1' onClick={ () => navigate("/read")}>GO READ PAGE</button>
     </div>
   )
 }
