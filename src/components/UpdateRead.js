@@ -34,13 +34,22 @@ function UpdateRead() {
       <button onClick={fetchData}> Display Data </button>
       <ul>
         {fruitArray.map( (item, index) => (
-          <li key={index}> 
-            {item.fruitName}: {item.fruitDefinition} : {item.fruitId}
-          </li>
+          <>
+            <li key={index}> 
+              {item.fruitName}: {item.fruitDefinition} : {item.fruitId}
+              <button className='button1' onClick={ () => navigate(`/updatewrite/${item.fruitId}`)}>UPDATE</button>
+            </li>
+
+          </>
+
         ) )}
       </ul>
       <button className='button1' onClick={ () => navigate("/")}>GO HOMEPAGE</button> <br />
       <button className='button1' onClick={ () => navigate("/read")}>GO READ PAGE</button>
+
+
+      
+
     </div>
   )
 }
