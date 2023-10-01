@@ -28,7 +28,7 @@ September-October 2023
     - Fetching and displaying data in a React component by using a map function.
     - Understanding Firebase data structure and the `get` method.
 
-6. **Upload Part - I**    
+6. **Update Part - I**    
     - We will see how to grab identification number for each document/object from Firebase Realtime Database
     - We will display this id number on the frontend. Later we will need this id number for Update Part - II and delete operation.
 
@@ -36,7 +36,7 @@ September-October 2023
     - We will add navigation between components because we will need it for Update Part-II
     - Some styling to make website to look nicer
 
-8. **Upload Part - II**  
+8. **Update Part - II**  
     - We will create UpdateWrite component to update a specific object
     - We will use useEffect and and a update function
 
